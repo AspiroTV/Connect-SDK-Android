@@ -118,4 +118,19 @@ dependencies {
     testCompile 'org.powermock:powermock-api-mockito:1.6.2'
 }
 
-apply from: 'maven-push.gradle'
+//apply from: 'maven-push.gradle'
+
+apply plugin: 'maven'
+
+group = 'com.connectsdk'
+version = '1.0.1'
+
+uploadArchives {
+    repositories {
+	mavenDeployer {
+		repository(url: mavenLocal().url)
+        }
+    }
+}
+
+
